@@ -8,33 +8,38 @@
     <fragment
         android:id="@+id/titleFragment"
         android:name="com.example.allaboutnavigation.TitleFragment"
-        android:label="fragment_title"
+        android:label="Title Fragment"
         tools:layout="@layout/fragment_title" >
         <action
-            android:id="@+id/action_titleFragment_to_gameFragment2"
-            app:destination="@id/gameFragment2" />
+            android:id="@+id/action_titleFragment_to_gameFragment"
+            app:destination="@id/gameFragment" />
     </fragment>
     <fragment
-        android:id="@+id/gameFragment2"
+        android:id="@+id/gameFragment"
         android:name="com.example.allaboutnavigation.GameFragment"
         android:label="fragment_game"
         tools:layout="@layout/fragment_game" >
         <action
-            android:id="@+id/action_gameFragment2_to_gameOverFragment2"
-            app:destination="@id/gameOverFragment2" />
+            android:id="@+id/action_gameFragment_to_gameOverFragment"
+            app:destination="@id/gameOverFragment"
+            app:popUpTo="@id/gameFragment"
+            app:popUpToInclusive="true" />
         <action
-            android:id="@+id/action_gameFragment2_to_gameWonFragment"
-            app:destination="@id/gameWonFragment" />
+            android:id="@+id/action_gameFragment_to_gameWonFragment"
+            app:destination="@id/gameWonFragment"
+            app:popUpTo="@id/gameFragment"
+            app:popUpToInclusive="true" />
     </fragment>
     <fragment
-        android:id="@+id/gameOverFragment2"
+        android:id="@+id/gameOverFragment"
         android:name="com.example.allaboutnavigation.GameOverFragment"
         android:label="fragment_game_over"
         tools:layout="@layout/fragment_game_over" >
         <action
-            android:id="@+id/action_gameOverFragment2_to_gameFragment2"
-            app:destination="@id/gameFragment2"
-            app:popUpTo="@id/titleFragment" />
+            android:id="@+id/action_gameOverFragment_to_gameFragment"
+            app:destination="@id/gameFragment"
+            app:popUpTo="@id/gameFragment"
+            app:popUpToInclusive="true" />
     </fragment>
     <fragment
         android:id="@+id/gameWonFragment"
@@ -42,8 +47,20 @@
         android:label="fragment_game_won"
         tools:layout="@layout/fragment_game_won" >
         <action
-            android:id="@+id/action_gameWonFragment_to_gameFragment2"
-            app:destination="@id/gameFragment2"
-            app:popUpTo="@id/titleFragment" />
+            android:id="@+id/action_gameWonFragment_to_gameFragment"
+            app:destination="@id/gameFragment"
+            app:popUpTo="@id/gameFragment"
+            app:popUpToInclusive="true" />
+        <argument
+            android:name="numCorrect"
+            app:argType="integer" />
+        <argument
+            android:name="numQuestions"
+            app:argType="integer" />
     </fragment>
+    <fragment
+        android:id="@+id/aboutFragment"
+        android:name="com.example.allaboutnavigation.AboutFragment"
+        android:label="@string/title_about_trivia"
+        tools:layout="@layout/fragment_about" />
 </navigation>
