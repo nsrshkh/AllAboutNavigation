@@ -63,4 +63,9 @@
         android:name="com.example.allaboutnavigation.AboutFragment"
         android:label="@string/title_about_trivia"
         tools:layout="@layout/fragment_about" />
+    <fragment
+        android:id="@+id/rulesFragment"
+        android:name="com.example.allaboutnavigation.RulesFragment"
+        android:label="fragment_rules"
+        tools:layout="@layout/fragment_rules" />
 </navigation>
